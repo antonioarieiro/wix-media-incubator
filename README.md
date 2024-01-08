@@ -16,3 +16,23 @@ O Wix Media PHP SDK é uma interface de programação de aplicativos (API) que f
 ### Instalação
 
 Instale o pacote `wixmedia-PHP` adicionando-o ao caminho de inclusão do seu projeto. Para usuários do Git, clone o repositório usando:
+
+git clone git@github.com:wix/wixmedia-php.git
+
+
+### Exemplo de Uso
+
+#### Upload de Arquivos
+
+```php
+require($sdk_wix_midea_dir.'WixClient.php');
+
+$client = new WixClient('YOUR_API_KEY', 'YOUR_API_SECRET');
+
+if ($image = $client->uploadImage('test.jpg')) {
+    echo "The image was successfully uploaded!\n";
+    echo $image->getId();
+} else {
+    echo "An error occurred...\n";
+    // Error handling
+}
